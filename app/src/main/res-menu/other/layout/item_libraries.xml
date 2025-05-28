@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="itemLibraries"
+            type="com.yoesuv.infomadiun.menu.other.viewmodels.ItemLibrariesViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fragment_info_margin"
+        android:layout_marginRight="@dimen/fragment_info_margin">
+
+        <!-- library name-->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewLibraryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{itemLibraries.name}"
+            android:textStyle="bold"
+            android:textSize="@dimen/title_libraries"
+            android:textColor="@color/default_text_color"
+            tools:text="@tools:sample/full_names"/>
+
+        <!-- library url -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewLibraryUrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{itemLibraries.url}"
+            android:textSize="@dimen/url_libraries"
+            android:textColor="@color/colorPrimary"
+            tools:text="@tools:sample/cities"/>
+
+        <!-- library license -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textViewLibraryLicense"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:text="@{itemLibraries.license}"
+            android:textSize="@dimen/license_libraries"
+            android:textColor="@color/default_text_color"
+            tools:text="@tools:sample/lorem"/>
+
+        <include
+            android:id="@+id/layoutDivider"
+            android:visibility="@{safeUnbox(itemLibraries.isLast()) ? View.GONE : View.VISIBLE}"
+            layout="@layout/divider"/>
+
+    </LinearLayout>
+
+</layout>

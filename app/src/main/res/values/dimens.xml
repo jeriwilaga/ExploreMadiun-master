@@ -1,0 +1,4 @@
+<resources>
+    <dimen name="activity_detail_image_height">@dimen/_200sdp</dimen>
+    <dimen name="icon_error_size">80dp</dimen>
+</resources>
